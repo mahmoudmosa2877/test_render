@@ -21,6 +21,7 @@ const subscriptions = {};
 // Endpoint to register a webhook subscription
 app.post('/webhook-subscriptions', (req, res) => {
     const { webhook_url } = req.body;
+    console.log(req.query)
 
     if (!webhook_url) {
         return res.status(400).json({ error: 'webhook_url is required' });
